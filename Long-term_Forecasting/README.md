@@ -1,33 +1,52 @@
-# FilterTS
-The code for **FilterTS: Comprehensive Frequency Filtering for Multivariate Time Series Forecasting**
+# <div align="center"> TimePMG: LLM-Based Time Series Forecasting with Period-Aware Multi-Scale Decomposition and Group-Wise Alignment
 
-![FilterTS main](./pic/FilterTS_main.png)
+# Datasets && Description
+📦 You can access the well pre-processed datasets from [[Google Drive]](https://drive.google.com/file/d/1t7jOkctNJ0rt3VMwZaqmxSuA75TFEo96/view?usp=sharing)
+[[Tsinghua Cloud]](https://cloud.tsinghua.edu.cn/f/0a758154e0d44de890e3/), then put the downloaded datasets under the folder `./datasets`. The detailed descriptions of the datasets for long-term time series forecasting are shown as follows:
+![dataset-statistics](https://github.com/shangzongjiang/TimePMG/blob/main/figures/long-few%20datasets.png)
+# Running
+🚀 We provide the experiment scripts of # <div align="center"> Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis
 
-## Get Started
-### Installation
-Please install the corresponding version of PyTorch via the official PyTorch website, then follow these steps to set up your environment.
-```bash
-pip install -r requirements.txt
+# Datasets && Description
+📦 You can access the well pre-processed datasets from [[Google Drive]](https://drive.google.com/file/d/1t7jOkctNJ0rt3VMwZaqmxSuA75TFEo96/view?usp=sharing)
+[[Tsinghua Cloud]](https://cloud.tsinghua.edu.cn/f/0a758154e0d44de890e3/), then put the downloaded datasets under the folder `./datasets`. The detailed descriptions of the datasets for long-term time series forecasting are shown as follows:
+![dataset-statistics](https://github.com/shangzongjiang/TimePMG/blob/main/figures/long-few%20datasets.png)
+# Running
+🚀 We provide the experiment scripts of TimePMG on all dataset under the folder `./scripts`. You can obtain the full results by running the following command:
 ```
-
-### Download the Dataset
-Download the dataset from the following [link](https://drive.google.com/file/d/1l51QsKvQPcqILT3DwfjCgx8Dsg2rpjot/edit) and place it in the `./dataset/` directory.
-(Please note, this dataset download link is provided by the author of iTransformer and is not associated with any author's address)
-
-## Training Scripts
-Run the shell script in the `./scripts` folder, using the following command, for example:
-```bash
-sh ./scripts/FilterTS_electricity.sh
+# Train on ETTh1
+bash ./scripts/ETTh1.sh
+# Train on ETTh2
+bash ./scripts/ETTh2.sh
+# Train on ETTm1
+bash ./scripts/ETTm1.sh
+# Train on ETTm2
+bash ./scripts/ETTm2.sh
+# Train on Traffic
+bash ./scripts/traffic.sh
+# Train on Electricity
+bash ./scripts/electricity.sh
+# Train on Weather
+bash ./scripts/weather.sh
 ```
-
-## Main Experimental Results
-![Main Results](./pic/main_results.png)
-
-FilterTS demonstrates superior accuracy across eight multivariate long-term time series forecasting datasets compared to current state-of-the-art models in most cases. 
-
-## Note on the drop_last Setting
-
-During a recent code review we discovered that an unintended drop_last=True option was left active in the dataloader.
-Below are the results obtained after rerunning all experiments with drop_last=False. Across the majority of settings the differences are negligible, confirming that the original conclusions remain valid. 
-
-[Main Results](./pic/main_results_fix.png)
+# Full results of long-term forecasting
+![full results of Long-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-long.png)
+ on all dataset under the folder `./scripts`. You can obtain the full results by running the following command:
+```
+# Train on ETTh1
+bash ./scripts/ETTh1.sh
+# Train on ETTh2
+bash ./scripts/ETTh2.sh
+# Train on ETTm1
+bash ./scripts/ETTm1.sh
+# Train on ETTm2
+bash ./scripts/ETTm2.sh
+# Train on Traffic
+bash ./scripts/traffic.sh
+# Train on Electricity
+bash ./scripts/electricity.sh
+# Train on Weather
+bash ./scripts/weather.sh
+```
+# Full results of long-term forecasting
+![full results of Long-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-long.png)
