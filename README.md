@@ -34,9 +34,6 @@ bash ./scripts/ETTh1.sh
 # short-term forecasting
 bash ./scripts/M4.sh
 
-# classification
-bash ./scripts/EthanolConcentration.sh
-
 # few-shot learning
 bash ./scripts/ETTh1.sh
 
