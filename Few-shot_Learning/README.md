@@ -1,4 +1,4 @@
-# <div align="center"> Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis
+# <div align="center"> TimePMG: LLM-Based Time Series Forecasting with Period-Aware Multi-Scale Decomposition and Group-Wise Alignment
 
 # Datasets && Description
 📦 You can access the well pre-processed datasets from [[Google Drive]](https://drive.google.com/file/d/1t7jOkctNJ0rt3VMwZaqmxSuA75TFEo96/view?usp=sharing)
