@@ -48,15 +48,10 @@ bash ./scripts/m4_m3.sh
 The proposed method outperforms other models on most tasks, including [long-term forecasting](./Long-term_Forecasting/README.md), [short-term forecasting](./Short-term_Forecasting/README.md), [classification](./Classification/README.md), [few-shot learning](./Few-shot_Learning/README.md), and [zero-shot learning](./Zero-shot_Learning/README.md).
 
 ## 5.1 Long-term forecasting
-![long-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/long-term.png)
+![long-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-long.png)
 ## 5.2 Short-term forecasting
-![short-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/short-term.png)
-## 5.3 Classification
-![classification](https://github.com/shangzongjiang/TimePMG/blob/main/figures/classification.png)
-## 5.4 Few-shot learning
-### 5.4.1 Few-shot learning results under 5% training data.
-![5few-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/5few-shot.png)
-### 5.4.2 Few-shot learning results under 10% training data.
-![10few-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/10few-shot.png)
-## 5.5 Zero-shot learning
-![zero-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/zero-shot.png)
+![short-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-shot.png)
+## 5.3 Few-shot learning
+![few-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-few.png)
+## 5.4 Zero-shot learning
+![zero-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-zero.png)
