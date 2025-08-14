@@ -8,19 +8,19 @@
 🚀 We provide the experiment scripts of TimePMG on all dataset under the folder `./scripts`. You can obtain the full results by running the following command:
 ```
 # Train on ETTh1
-bash ./scripts/ETTh1.sh
+bash ./scripts/TimePMG_ETTh1.sh
 # Train on ETTh2
-bash ./scripts/ETTh2.sh
+bash ./scripts/TimePMG_ETTh2.sh
 # Train on ETTm1
-bash ./scripts/ETTm1.sh
+bash ./scripts/TimePMG_ETTm1.sh
 # Train on ETTm2
-bash ./scripts/ETTm2.sh
+bash ./scripts/TimePMG_ETTm2.sh
 # Train on Traffic
-bash ./scripts/traffic.sh
+bash ./scripts/TimePMG_traffic.sh
 # Train on Electricity
-bash ./scripts/electricity.sh
+bash ./scripts/TimePMG_electricity.sh
 # Train on Weather
-bash ./scripts/weather.sh
+bash ./scripts/TimePMG_weather.sh
 ```
 # Full results of long-term forecasting
 ![full results of Long-term forecasting](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-long.png)
