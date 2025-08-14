@@ -23,7 +23,4 @@ bash ./scripts/electricity.sh
 bash ./scripts/weather.sh
 ```
 # Full results of few-shot learning
-## Few-shot learning results under 5% training data.
-![5full results of few-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-5few.png)
-## Few-shot learning results under 10% training data.
-![10full results of few-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-10few.png)
+![few-shot learning](https://github.com/shangzongjiang/TimePMG/blob/main/figures/full-few.png)
