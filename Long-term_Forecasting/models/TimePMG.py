@@ -106,30 +106,6 @@ class Model(nn.Module):
         self.word_embeddings = self.llm_model.get_input_embeddings().weight
         self.vocab_size = self.word_embeddings.shape[0]
 
-        # embeddings = self.word_embeddings.detach().cpu().numpy()  # 如果使用的是GPU，要确保将其移动到CPU并转换为numpy数组
-        # embeddings_subset = embeddings[:52672]
-        # # 对数据进行标准化
-        # scaler = StandardScaler()
-        # embeddings_scaled = scaler.fit_transform(embeddings_subset)  # 标准化每个特征
-        #
-        # # 使用 PCA 降维到 50 维
-        # # pca = PCA(n_components=50)
-        # # embeddings_pca = pca.fit_transform(embeddings_scaled)
-        #
-        # # 使用 t-SNE 降维到 2 维
-        # tsne = TSNE(n_components=2, perplexity=30, learning_rate=500, n_iter=1000, random_state=42)
-        # # tsne = TSNE(n_components=2, random_state=42)
-        # embeddings_2d = tsne.fit_transform(embeddings_scaled)
-        #
-        # # 可视化降维后的嵌入
-        # plt.figure(figsize=(10, 10))
-        # plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1])
-        #
-        # plt.title('t-SNE Visualization of GPT-2 Word Embeddings (Optimized)')
-        # plt.xlabel('t-SNE Component 1')
-        # plt.ylabel('t-SNE Component 2')
-        # plt.savefig('./tsne_embeddings222.png')
-        # plt.show()
 
 
 
@@ -229,35 +205,6 @@ class Model(nn.Module):
             word_output=self.multi_word_layer[i](word_output.permute(1,0)).permute(1,0)
 
 
-
-            #
-            # dec_out = word_output.detach().cpu().numpy()
-            # theta = np.linspace(0, 2 * np.pi, len(dec_out), endpoint=False)
-            # r = np.random.rand(len(dec_out)) * 0.05
-            # init_star = np.stack([r * np.cos(theta), r * np.sin(theta)], axis=1)
-            #
-            #
-            # emb = StandardScaler().fit_transform(dec_out)
-            # # dec_out = emb.reshape(-1, dec_out.shape[-1])
-            #
-            # # emb = PCA(n_components=50, random_state=42).fit_transform(dec_out)
-            # # tsne = TSNE(n_components=2, perplexity=30, learning_rate=500, n_iter=1000, random_state=42)
-            # tsne = TSNE(n_components=2, perplexity=10, learning_rate=10, n_iter=3000, init='random', random_state=24,early_exaggeration=50, metric='cosine',n_jobs=-1)
-            # # tsne = TSNE(n_components=2, random_state=42)
-            # embeddings_2d = tsne.fit_transform(dec_out)
-            #
-            # # 可视化降维后的嵌入
-            # plt.figure(figsize=(8, 6))
-            # plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1],s=10)
-            # # plt.scatter(emb[:, 0], emb[:, 1], s=10)
-            #
-            # plt.title('t-SNE Visualization of GPT-2 Word Embeddings (Optimized)')
-            # plt.xlabel('t-SNE Component 1')
-            # plt.ylabel('t-SNE Component 2')
-            # plt.tight_layout()
-            # plt.savefig('./tsne_embeddingsfin.png')
-            # plt.show()
-
             word_all.append(word_output)
             word_expanded=word_output.unsqueeze(0).expand(self.batch_size, -1, -1).permute(0, 2, 1)
             result = torch.cat((seq_enc[i].permute(0, 2, 1), word_expanded), dim=-1).permute(0, 2, 1)
@@ -353,35 +300,9 @@ class Model(nn.Module):
         dec_out=self.dec_mapping(dec_out)
         dec_out=self.len_mapping(dec_out.permute(0,2,1)).permute(0,2,1)
 
-        # dec_out = dec_out[:, :, :self.seq_len]
-        # print(ccc)
-        # dec_out = dec_out.detach().cpu().numpy()
-        # dec_out = dec_out.reshape(-1, dec_out.shape[-1])
-        # tsne = TSNE(n_components=2, perplexity=30, learning_rate=500, n_iter=1000, random_state=42)
-        # # tsne = TSNE(n_components=2, random_state=42)
-        # embeddings_2d = tsne.fit_transform(dec_out)
-        #
-        # # 可视化降维后的嵌入
-        # plt.figure(figsize=(10, 10))
-        # plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1])
-        #
-        # plt.title('t-SNE Visualization of GPT-2 Word Embeddings (Optimized)')
-        # plt.xlabel('t-SNE Component 1')
-        # plt.ylabel('t-SNE Component 2')
-        #
-        # plt.savefig('./tsne_embeddings1.png')
-        # plt.show()
 
 
 
-
-
-
-
-        # if self.static_freq_indices is not None:
-        #     print("okk")
-        # else:
-        #     print("no")
         """
         ###original(原来的代码)
         for i in range(self.layer):
